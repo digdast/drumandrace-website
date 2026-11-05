@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRUM &amp; RACE // Worldwide Drift Culture, Homebrew Tuning &amp; Track Events</title>
+  
+  <!-- SEO & Social Metadata -->
+  <meta name="description" content="Drum & Race is the worldwide home for grassroots drift racing, homebrew garage tuning, drift car modifications, and global track events from Ebisu to Formula Drift.">
+  <meta name="keywords" content="drum and race, drift racing, homebrew drift cars, grassroots drifting, drift car modifications, angle kits, welded differential, hydraulic handbrake, Ebisu Matsuri, Formula Drift, Meihan Sportsland, Drift Masters, car tuning, turbo builds">
+  <meta name="author" content="Efrain Rivas / DrumAndRace">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://drumandrace.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://drumandrace.com/">
+  <meta property="og:title" content="DRUM &amp; RACE // Worldwide Drift Culture &amp; Homebrew Tuning">
+  <meta property="og:description" content="Grassroots drift builds, worldwide event calendar, shed tuning guides, and drift angle setup calculators.">
+  <meta property="og:image" content="https://drumandrace.com/static/drumandrace-logo.svg">
+  <meta property="og:site_name" content="DrumAndRace">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://drumandrace.com/">
+  <meta name="twitter:title" content="DRUM &amp; RACE // Grassroots Drift Culture">
+  <meta name="twitter:description" content="Worldwide drift racing calendar, shed tuning guides, lock kit specs, and community missile builds.">
+  <meta name="twitter:image" content="https://drumandrace.com/static/drumandrace-logo.svg">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DrumAndRace",
+    "url": "https://drumandrace.com",
+    "description": "Worldwide Grassroots Drift Racing, Homebrew Car Modifications & Global Track Events",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://drumandrace.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+
+  <!-- Google AdSense with Page-Level Auto-Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1596056523034714"
+     crossorigin="anonymous"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-1596056523034714",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          colors: {
+            race: {
+              orange: '#ff5500',
+              red: '#ff2200',
+              yellow: '#ffaa00',
+              dark: '#0a0c10',
+              surface: '#11141d',
+              card: '#161a26',
+              border: 'rgba(255, 85, 0, 0.2)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #080a0e;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(255, 85, 0, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 30%, rgba(255, 170, 0, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(255, 34, 0, 0.08) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+    .carbon-card {
+      background: rgba(17, 20, 29, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .carbon-card:hover {
+      border-color: rgba(255, 85, 0, 0.4);
+      box-shadow: 0 12px 35px -10px rgba(255, 85, 0, 0.2);
+    }
+    .neon-text-orange {
+      text-shadow: 0 0 20px rgba(255, 85, 0, 0.4);
+    }
+    .gradient-fire {
+      background: linear-gradient(135deg, #ff3300 0%, #ff7700 50%, #ffbb00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="text-slate-200 min-h-screen flex flex-col antialiased selection:bg-race-orange selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-race-red via-race-orange to-race-yellow text-black py-1.5 px-4 text-center text-xs font-black tracking-wider uppercase font-mono">
+    🏁 WORLDWIDE DRIFT CALENDAR 2026-2027 ACTIVE &bull; SUBMIT YOUR SHED BUILD FOR GLOBAL SHOWCASE
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-race-dark/90 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3.5 group select-none">
+        <img src="/static/drumandrace-logo.svg" alt="DrumAndRace" class="h-10 w-auto transition-transform group-hover:scale-105" />
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-300">
+        <a href="#events" class="hover:text-race-orange transition flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 text-race-orange"></i> Global Events</a>
+        <a href="#builds" class="hover:text-race-orange transition flex items-center gap-1.5"><i data-lucide="wrench" class="w-4 h-4 text-race-orange"></i> Homebrew Builds</a>
+        <a href="#calculator" class="hover:text-race-orange text-amber-400 transition flex items-center gap-1.5 font-mono"><i data-lucide="gauge" class="w-4 h-4"></i> Drift Alignment Lab</a>
+        <a href="#submit" class="hover:text-race-orange transition flex items-center gap-1.5"><i data-lucide="plus-circle" class="w-4 h-4 text-race-orange"></i> Submit Build</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-3">
+        <a href="#events" class="px-4 py-2 rounded-xl bg-gradient-to-r from-race-red to-race-orange hover:opacity-90 text-white text-xs font-black uppercase tracking-wider transition shadow-lg shadow-orange-950/40 font-mono">
+          Race Radar &rarr;
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Google AdSense Leaderboard Slot -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 w-full text-center">
+    <div class="carbon-card p-3 rounded-2xl border border-slate-800/80 text-center overflow-hidden">
+      <div class="text-[9px] uppercase font-mono tracking-widest text-slate-500 mb-1.5">Advertisement</div>
+      <ins class="adsbygoogle"
+           style="display:block; min-height:90px;"
+           data-ad-client="ca-pub-1596056523034714"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-race-orange/15 border border-race-orange/30 text-race-orange text-xs font-mono font-bold tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-race-orange animate-ping"></span>
+          <span>TIRE SMOKE &bull; ANGLE KITS &bull; WELDED DIFFS</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight italic uppercase leading-none">
+          THE SOUL OF <span class="gradient-fire">DRIFT</span>.<br/>BUILT IN SHEDS.<br/>RACED WORLDWIDE.
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 font-sans leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          From Japanese mountain touges at Ebisu and Meihan to grassroots missile battles at Final Bout and Drift Masters. Dedicated to the garage tuners welding diffs, plumbing hydro handbrakes, and pushing high angle on cold asphalt.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+          <a href="#events" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-race-red via-race-orange to-race-yellow text-black font-black uppercase text-xs tracking-wider transition hover:scale-105 font-mono shadow-xl shadow-orange-950/50 flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Browse Worldwide Events</span>
+          </a>
+          <a href="#calculator" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider transition border border-slate-700 font-mono flex items-center gap-2">
+            <i data-lucide="sliders" class="w-4 h-4 text-race-orange"></i>
+            <span>Drift Setup Calculator</span>
+          </a>
+        </div>
+
+        <!-- Telemetry Stats Strip -->
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-white font-mono">68°+</div>
+            <div class="text-[11px] font-mono text-slate-400 uppercase">Max Steering Lock</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-race-orange font-mono">100%</div>
+            <div class="text-[11px] font-mono text-slate-400 uppercase">Homebrew Garage Spirit</div>
+          </div>
+          <div>
+            <div class="text-2xl sm:text-3xl font-black text-amber-400 font-mono">Global</div>
+            <div class="text-[11px] font-mono text-slate-400 uppercase">Event Radar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Hero Card: The Grassroots Missile Anatomy -->
+      <div class="lg:col-span-5">
+        <div class="carbon-card p-6 sm:p-8 rounded-3xl border border-slate-800 relative overflow-hidden space-y-5">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-xs font-mono font-bold text-white uppercase tracking-wider">CHASSIS BLUEPRINT // STAGE 2</span>
+            </div>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-race-orange/15 text-race-orange border border-race-orange/30 font-bold">MISSILE SPEC</span>
+          </div>
+
+          <div class="space-y-3 font-mono text-xs">
+            <div class="bg-black/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <span class="text-slate-400 flex items-center gap-2"><i data-lucide="disc" class="w-4 h-4 text-race-orange"></i> Differential</span>
+              <span class="text-emerald-400 font-bold">Welded 3.91 / 2-Way LSD</span>
+            </div>
+            <div class="bg-black/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <span class="text-slate-400 flex items-center gap-2"><i data-lucide="corner-up-right" class="w-4 h-4 text-race-orange"></i> Steering Lock</span>
+              <span class="text-amber-400 font-bold">68° Super Angle Knuckles</span>
+            </div>
+            <div class="bg-black/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <span class="text-slate-400 flex items-center gap-2"><i data-lucide="anchor" class="w-4 h-4 text-race-orange"></i> Handbrake</span>
+              <span class="text-sky-400 font-bold">Dual-Caliper Hydro (0.625)</span>
+            </div>
+            <div class="bg-black/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <span class="text-slate-400 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-race-orange"></i> Alignment</span>
+              <span class="text-purple-300 font-bold">-4.5° Camber / 0° Rear Toe</span>
+            </div>
+          </div>
+
+          <div class="pt-2 text-center">
+            <span class="text-[11px] font-mono text-slate-500">Engineered for entry speed, angle recovery, and tire destruction.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section: Worldwide Drift Event Radar -->
+  <section id="events" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/80">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-race-orange/10 border border-race-orange/20 text-race-orange font-mono text-xs font-semibold mb-2">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>GLOBAL TRACK RADAR</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white italic uppercase">Worldwide Drift &amp; Racing Calendar</h2>
+        <p class="text-sm text-slate-400 mt-1">Confirmed grassroots matsuri festivals, arena battles, and mountain tandem stages.</p>
+      </div>
+
+      <!-- Region Filter Tabs -->
+      <div class="flex items-center gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800 text-xs font-mono">
+        <button onclick="filterEvents('All')" class="tab-btn px-3 py-1.5 rounded-lg bg-race-orange text-black font-bold">All</button>
+        <button onclick="filterEvents('Japan')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white">Japan</button>
+        <button onclick="filterEvents('North America')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white">N. America</button>
+        <button onclick="filterEvents('Europe')" class="tab-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white">Europe</button>
+      </div>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="events-container">
+      <!-- Populated via JavaScript -->
+    </div>
+  </section>
+
+  <!-- Mid-Page Ad Unit -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 w-full text-center">
+    <div class="carbon-card p-3 rounded-2xl border border-slate-800/80 text-center overflow-hidden">
+      <div class="text-[9px] uppercase font-mono tracking-widest text-slate-500 mb-1.5">Advertisement</div>
+      <ins class="adsbygoogle"
+           style="display:block; min-height:90px;"
+           data-ad-client="ca-pub-1596056523034714"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <!-- Section: Homebrew Drift Tuning Calculator -->
+  <section id="calculator" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/80">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-xs font-semibold mb-3">
+        <i data-lucide="gauge" class="w-3.5 h-3.5"></i>
+        <span>INTERACTIVE SHED SETUP LAB</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white italic uppercase">Drift Alignment &amp; Tire Pressure Calculator</h2>
+      <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+        Input your vehicle chassis and track conditions to get competition-proven drift alignment angles, steering lock settings, and cold tire pressure baselines.
+      </p>
+    </div>
+
+    <div class="carbon-card p-6 sm:p-10 rounded-3xl border border-slate-800 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label class="block text-xs font-mono font-bold text-slate-300 mb-2 uppercase">1. Select Chassis Architecture</label>
+          <select id="calc-chassis" onchange="runAlignmentCalc()" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-3 text-sm font-mono text-white focus:outline-none focus:border-race-orange">
+            <option value="e46">BMW E46 / E36 3-Series (MacPherson Front / Multi-link Rear)</option>
+            <option value="schassis">Nissan S13 / S14 / S15 Silvia (MacPherson / Multi-link)</option>
+            <option value="miata">Mazda Miata MX-5 NA/NB (Double Wishbone All Around)</option>
+            <option value="gt86">Toyota GT86 / Subaru BRZ / GR86 (Lightweight Coupe)</option>
+            <option value="jzx">Toyota JZX90 / JZX100 Chaser / Mark II (Heavy 4-Door Sedan)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono font-bold text-slate-300 mb-2 uppercase">2. Select Track Condition</label>
+          <select id="calc-surface" onchange="runAlignmentCalc()" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-3 text-sm font-mono text-white focus:outline-none focus:border-race-orange">
+            <option value="dry-grip">Dry Asphalt (High Grip / Fast Transitions)</option>
+            <option value="dry-slick">Polished Concrete / Skidpad (Low Grip)</option>
+            <option value="rain">Wet Rain / Damp Surface (Max Rear Bite Required)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Output Specs Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono">
+        <div class="bg-black/60 p-4 rounded-2xl border border-slate-800 text-center">
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Front Camber</div>
+          <div id="out-fcamber" class="text-xl sm:text-2xl font-black text-race-orange mt-1">-4.8°</div>
+          <div class="text-[10px] text-slate-400 mt-1">Full contact on lock</div>
+        </div>
+
+        <div class="bg-black/60 p-4 rounded-2xl border border-slate-800 text-center">
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Rear Camber</div>
+          <div id="out-rcamber" class="text-xl sm:text-2xl font-black text-emerald-400 mt-1">-0.8°</div>
+          <div class="text-[10px] text-slate-400 mt-1">Maximum forward drive</div>
+        </div>
+
+        <div class="bg-black/60 p-4 rounded-2xl border border-slate-800 text-center">
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Front Caster</div>
+          <div id="out-caster" class="text-xl sm:text-2xl font-black text-sky-400 mt-1">+7.5°</div>
+          <div class="text-[10px] text-slate-400 mt-1">Snappy self-steer</div>
+        </div>
+
+        <div class="bg-black/60 p-4 rounded-2xl border border-slate-800 text-center">
+          <div class="text-[10px] text-slate-500 uppercase font-bold">Rear Cold PSI</div>
+          <div id="out-tirepsi" class="text-xl sm:text-2xl font-black text-amber-400 mt-1">26 PSI</div>
+          <div class="text-[10px] text-slate-400 mt-1">Controlled de-bead safety</div>
+        </div>
+      </div>
+
+      <!-- Setup Pro Tips -->
+      <div class="mt-6 p-4 rounded-2xl bg-race-orange/10 border border-race-orange/20 flex items-start gap-3 text-xs text-slate-300">
+        <i data-lucide="info" class="w-5 h-5 text-race-orange shrink-0 mt-0.5"></i>
+        <div>
+          <span class="font-bold text-white uppercase font-mono">Homebrew Pro Tip:</span>
+          <span id="out-tip" class="ml-1 text-slate-300">Run zero rear toe for progressive breakaway. Plumb your hydro handbrake in-line with the rear brake line, or install dedicated dual rear calipers to preserve pedal feel.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Homebrew Garage Drift Builds -->
+  <section id="builds" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/80">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs font-semibold mb-3">
+        <i data-lucide="tool" class="w-3.5 h-3.5"></i>
+        <span>SHED-ENGINEERED MISSILES</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-black text-white italic uppercase">Featured Homebrew Drift Builds</h2>
+      <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+        Real grassroots drift cars built by backyard fabricators, weekend wrenchers, and grassroots racers.
+      </p>
+    </div>
+
+    <!-- Builds Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="builds-container">
+      <!-- Populated via JavaScript -->
+    </div>
+  </section>
+
+  <!-- Section: Submit Your Build -->
+  <section id="submit" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full border-t border-slate-800/80">
+    <div class="carbon-card p-8 sm:p-12 rounded-3xl border border-slate-800 max-w-3xl mx-auto">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl sm:text-3xl font-black text-white italic uppercase">Submit Your Drift Build to the Worldwide Grid</h3>
+        <p class="text-xs text-slate-400 mt-2 font-mono">Have your garage build featured on Drum &amp; Race. Welded diffs, angle kits, and turbo swaps welcome.</p>
+      </div>
+
+      <form id="build-form" onsubmit="submitBuildForm(event)" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Chassis &amp; Model *</label>
+            <input type="text" id="form-chassis" required placeholder="e.g. BMW E36 328i Sedan" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Builder / Crew Name *</label>
+            <input type="text" id="form-builder" required placeholder="e.g. Apex Shed Racing" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Engine &amp; Power *</label>
+            <input type="text" id="form-engine" required placeholder="e.g. M52B28 Turbo (400 WHP)" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Angle Kit / Steering Lock *</label>
+            <input type="text" id="form-angle" required placeholder="e.g. SLR Mini Angle Kit (65°)" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Differential Setup *</label>
+            <input type="text" id="form-diff" required placeholder="e.g. Welded OEM 3.45" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-400 mb-1">Handbrake System *</label>
+            <input type="text" id="form-hydro" required placeholder="e.g. Standalone Dual Caliper Hydro" class="w-full bg-black/80 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-race-orange" />
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-race-red via-race-orange to-race-yellow text-black font-black uppercase tracking-wider text-xs font-mono transition hover:scale-[1.01] shadow-lg shadow-orange-950/40">
+          Post Build to Drum &amp; Race Live Feed &rarr;
+        </button>
+
+        <div id="form-msg" class="text-center text-xs font-mono text-emerald-400 hidden"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Pre-Footer Ad Unit -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 w-full text-center">
+    <div class="carbon-card p-3 rounded-2xl border border-slate-800/80 text-center overflow-hidden">
+      <div class="text-[9px] uppercase font-mono tracking-widest text-slate-500 mb-1.5">Advertisement</div>
+      <ins class="adsbygoogle"
+           style="display:block; min-height:90px;"
+           data-ad-client="ca-pub-1596056523034714"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-race-dark py-12 px-4 sm:px-6 lg:px-8 text-xs text-slate-500 font-sans mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="/static/drumandrace-logo.svg" alt="DrumAndRace" class="h-8 w-auto" />
+        <div>
+          <p class="font-bold text-slate-300">DRUM &amp; RACE &bull; Worldwide Drift &amp; Homebrew Motorsports</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">&copy; 2026 DrumAndRace.com. Engineered for grassroots motorsport enthusiasts.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-5 text-slate-400 font-medium">
+        <a href="#events" class="hover:text-race-orange transition">Event Radar</a>
+        <a href="#builds" class="hover:text-race-orange transition">Garage Builds</a>
+        <a href="#calculator" class="hover:text-race-orange transition font-bold text-amber-400">Drift Setup Lab</a>
+        <button onclick="openModal('privacy-modal')" class="hover:text-race-orange transition underline underline-offset-4">Privacy Policy</button>
+        <button onclick="openModal('terms-modal')" class="hover:text-race-orange transition underline underline-offset-4">Terms of Service</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Privacy Policy (Google AdSense Compliant) -->
+  <div id="privacy-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="carbon-card bg-[#0e111a] max-w-2xl w-full rounded-3xl border border-slate-700 p-6 sm:p-8 max-h-[85vh] overflow-y-auto space-y-4 text-slate-300">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i data-lucide="shield" class="w-5 h-5 text-race-orange"></i>
+          <span>Privacy Policy &amp; Cookie Disclosure</span>
+        </h3>
+        <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-white text-lg font-mono">&times;</button>
+      </div>
+
+      <div class="text-xs space-y-3 leading-relaxed">
+        <p><b>Last Updated:</b> November 2026</p>
+        <p>Drum &amp; Race ("we", "us", "our") is dedicated to enthusiast automotive culture and user privacy. This policy outlines how advertising cookies and data are handled across <b>drumandrace.com</b>.</p>
+        
+        <h4 class="font-bold text-white text-sm pt-2">1. Google AdSense &amp; Advertising Cookies</h4>
+        <p>
+          We use Google AdSense and third-party advertising partners to serve ads when you visit our website.
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+          <li>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites on the internet.</li>
+          <li>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visits to our site and/or other sites on the Internet.</li>
+          <li>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" class="text-race-orange underline">Google Ads Settings</a> or <a href="https://www.aboutads.info/choices/" target="_blank" class="text-race-orange underline">aboutads.info</a>.</li>
+        </ul>
+
+        <h4 class="font-bold text-white text-sm pt-2">2. Client-Side Tools &amp; Calculator Data</h4>
+        <p>
+          The Drift Alignment &amp; Setup Calculator runs entirely in your browser. No personal vehicle specs, tire pressures, or setup data are collected or transmitted to our servers.
+        </p>
+
+        <h4 class="font-bold text-white text-sm pt-2">3. Publisher Information</h4>
+        <p>
+          Drum &amp; Race is published for grassroots motorsport culture. For inquiries, contact us via drumandrace.com.
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('privacy-modal')" class="px-5 py-2 rounded-xl bg-race-orange text-black font-mono text-xs font-bold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Terms of Service -->
+  <div id="terms-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="carbon-card bg-[#0e111a] max-w-2xl w-full rounded-3xl border border-slate-700 p-6 sm:p-8 max-h-[85vh] overflow-y-auto space-y-4 text-slate-300">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+          <i data-lucide="file-check" class="w-5 h-5 text-emerald-400"></i>
+          <span>Terms of Service &amp; Track Disclaimer</span>
+        </h3>
+        <button onclick="closeModal('terms-modal')" class="text-slate-400 hover:text-white text-lg font-mono">&times;</button>
+      </div>
+
+      <div class="text-xs space-y-3 leading-relaxed">
+        <p><b>Effective Date:</b> November 2026</p>
+        <p>By accessing <b>drumandrace.com</b>, you agree to these Terms of Service.</p>
+        
+        <h4 class="font-bold text-white text-sm pt-2">1. Motorsport &amp; Track Use Only Disclaimer</h4>
+        <p>
+          Automotive modifications, angle kits, welded differentials, and hydraulic handbrakes discussed on this website are intended exclusively for closed-course motorsport competition and off-highway track use. Drifting should only be performed at sanctioned facilities and track days.
+        </p>
+
+        <h4 class="font-bold text-white text-sm pt-2">2. Accuracy of Event Schedules</h4>
+        <p>
+          Event dates and regulations are subject to change by respective sanctioning bodies (Formula Drift, Drift Masters, Ebisu Circuit). Always verify with event organizers before traveling.
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 flex justify-end">
+        <button onclick="closeModal('terms-modal')" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-mono text-xs font-bold transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Default Events Data
+    let allEvents = [
+      {
+        id: "ebisu-matsuri",
+        name: "Ebisu Circuit Autumn Drift Matsuri",
+        location: "Nihonmatsu, Fukushima, Japan",
+        circuit: "Ebisu Minami & Touge Course",
+        region: "Japan",
+        dates: "Nov 14 - 15, 2026",
+        category: "Grassroots Festival",
+        description: "The sacred ground of drift culture. 48 hours of non-stop grassroots tandem drifting across Minami, Kita, and Touge mountain courses.",
+        badge: "Legendary Touge",
+        status: "Upcoming",
+        surface: "Mountain Asphalt",
+        spectators: "5,000+"
+      },
+      {
+        id: "final-bout-gallery",
+        name: "Final Bout Special Stage: Midwest",
+        location: "Shawano, Wisconsin, USA",
+        circuit: "USAIR Motorsports Raceway",
+        region: "North America",
+        dates: "Dec 05 - 06, 2026",
+        category: "Team Tandem Jam",
+        description: "Authentic Japanese style street-car team tandem competition. Authentic aero, low ride height, 3-to-5 car trains.",
+        badge: "Team Tandem",
+        status: "Registration Open",
+        surface: "Tight Karting Track",
+        spectators: "8,500+"
+      },
+      {
+        id: "drift-masters-ferropolis",
+        name: "Drift Masters European Championship Finals",
+        location: "Gräfenhainichen, Germany",
+        circuit: "Ferropolis Arena (City of Iron)",
+        region: "Europe",
+        dates: "Aug 21 - 22, 2027",
+        category: "Pro-Spec Arena",
+        description: "1,000+ HP pro missile battle inside a massive open-air museum surrounded by 100-meter industrial bucket-wheel excavators.",
+        badge: "1000+ HP Pro",
+        status: "Scheduled",
+        surface: "Industrial Concrete",
+        spectators: "25,000+"
+      },
+      {
+        id: "gatebil-rudskogen",
+        name: "Gatebil Extreme Horsepower Festival",
+        location: "Rakkestad, Norway",
+        circuit: "Rudskogen Motorpark",
+        region: "Europe",
+        dates: "Jul 08 - 11, 2027",
+        category: "No-Limit Festival",
+        description: "The wildest horsepower gathering on Earth. 1,200 HP twin-turbo 2JZ Volvos, V8 BMWs, and nonstop open-track drift carnage.",
+        badge: "Speed & Smoke",
+        status: "Scheduled",
+        surface: "Formula Grade GP",
+        spectators: "40,000+"
+      },
+      {
+        id: "clutch-kickers",
+        name: "Clutch Kickers $100K Invitational",
+        location: "Callahan, Florida, USA",
+        circuit: "Emerald Coast Dragway",
+        region: "North America",
+        dates: "Jan 16 - 17, 2027",
+        category: "Grassroots to Pro",
+        description: "The largest grassroots prize purse in drifting. Homebrew builds going door-to-door with Formula D veterans.",
+        badge: "$100K Shootout",
+        status: "Qualifying Open",
+        surface: "Short Oval Infield",
+        spectators: "12,000+"
+      },
+      {
+        id: "meihan-kansai-allstar",
+        name: "Meihan Sportsland Kansai All-Star Jam",
+        location: "Yamazoe, Nara, Japan",
+        circuit: "Meihan C-Course",
+        region: "Japan",
+        dates: "Feb 27 - 28, 2027",
+        category: "Wall Tap Masters",
+        description: "The legendary backward-entry clipping point against the concrete wall. Homebrew AE86s, Silvias, and JZX100s rubbing rear bumpers.",
+        badge: "Concrete Wall Run",
+        status: "Announced",
+        surface: "Technical Asphalt",
+        spectators: "6,000+"
+      }
+    ];
+
+    // Default Builds Data
+    let allBuilds = [
+      {
+        chassis: "BMW E46 330i Coupe // 'Missile Stage 2'",
+        builder: "Homebrew Shed Build (Efrain Rivas)",
+        engine: "M54B30 Turbo w/ Garrett GT3582R (14 PSI, 465 WHP)",
+        steering_angle: "68° Dual-Lock Kit (SLR Super Angle)",
+        differential: "Welded OEM 3.91 Final Drive with Reinforced Subframe",
+        handbrake: "Dual-Caliper Hydraulic Setup w/ Wilwood 0.625 Master",
+        suspension: "BC Racing Custom 12k Front / 8k Rear True Coilover",
+        badge: "Street Missile",
+        hp: "465 WHP"
+      },
+      {
+        chassis: "Nissan 180SX (RPS13) // 'Kansai Spec'",
+        builder: "Midnight Garage Tokyo",
+        engine: "SR20DET Stroker 2.2L w/ Tomei ARMS M7960 (420 WHP)",
+        steering_angle: "65° Custom Modified Knuckles + Extended LCAs",
+        differential: "Nismo 2-Way GT LSD (4.08 Final Drive)",
+        handbrake: "In-line Hydro Handbrake + Project Mu D1 Spec Shoes",
+        suspension: "D-Max Super Street Coilovers + D-Max Tension Rods",
+        badge: "Pure JDM",
+        hp: "420 WHP"
+      },
+      {
+        chassis: "Toyota GR86 // 'Turbo Touge Runner'",
+        builder: "Apex Craft USA",
+        engine: "FA24 w/ HKS GTIII-RS Turbo Kit (9.5 PSI, 385 WHP)",
+        steering_angle: "62° Wisefab Half-Angle Kit",
+        differential: "Cusco Type-RS 1.5/2-Way Switchable LSD",
+        handbrake: "Chase Bays Standalone Dual Rear Caliper Kit",
+        suspension: "Fortune Auto 510 Series w/ Swift Springs (9k/7k)",
+        badge: "Modern Platform",
+        hp: "385 WHP"
+      },
+      {
+        chassis: "Mazda Miata MX-5 (NB) // 'Screamer Turbo'",
+        builder: "Budget Skid Shack",
+        engine: "BP-4W 1.8L Turbo w/ TD04-19T (260 WHP @ 2,150 lbs)",
+        steering_angle: "58° Extended Balljoints + Rack Spacers",
+        differential: "Torsen Type 2 LSD (4.10 Ratio)",
+        handbrake: "Flyin' Miata Proportioning + High-Friction Pads",
+        suspension: "MeisterR ClubRace 12.5k / 7k",
+        badge: "Featherweight",
+        hp: "260 WHP"
+      }
+    ];
+
+    function renderEvents(events) {
+      const container = document.getElementById('events-container');
+      container.innerHTML = '';
+      events.forEach(e => {
+        const card = document.createElement('div');
+        card.className = 'carbon-card p-6 rounded-3xl border border-slate-800 flex flex-col justify-between';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-race-orange/15 text-race-orange border border-race-orange/30 font-bold uppercase">${e.badge}</span>
+              <span class="text-xs font-mono font-bold text-amber-400">${e.region}</span>
+            </div>
+            <h3 class="text-lg font-black text-white italic uppercase">${e.name}</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">${e.description}</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 font-mono text-xs space-y-1.5">
+            <div class="flex justify-between text-slate-400">
+              <span>Date:</span>
+              <span class="text-white font-bold">${e.dates}</span>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Circuit:</span>
+              <span class="text-sky-300">${e.circuit}</span>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Surface:</span>
+              <span class="text-emerald-400">${e.surface}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    function filterEvents(region) {
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.innerText === region || (region === 'North America' && btn.innerText.includes('America'))) {
+          btn.className = 'tab-btn px-3 py-1.5 rounded-lg bg-race-orange text-black font-bold';
+        } else {
+          btn.className = 'tab-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white';
+        }
+      });
+      if (region === 'All') {
+        renderEvents(allEvents);
+      } else {
+        renderEvents(allEvents.filter(e => e.region === region));
+      }
+    }
+
+    function renderBuilds(builds) {
+      const container = document.getElementById('builds-container');
+      container.innerHTML = '';
+      builds.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'carbon-card p-6 sm:p-8 rounded-3xl border border-slate-800 flex flex-col justify-between';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold uppercase">${b.badge}</span>
+              <span class="text-sm font-black text-race-orange font-mono">${b.hp}</span>
+            </div>
+            <h3 class="text-xl font-black text-white italic uppercase">${b.chassis}</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Built by: <span class="text-slate-300 font-bold">${b.builder}</span></p>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+            <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
+              <span class="text-[10px] text-slate-500 uppercase block">Engine &amp; Boost</span>
+              <span class="text-slate-200">${b.engine}</span>
+            </div>
+            <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
+              <span class="text-[10px] text-slate-500 uppercase block">Steering Angle</span>
+              <span class="text-amber-400 font-bold">${b.steering_angle}</span>
+            </div>
+            <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
+              <span class="text-[10px] text-slate-500 uppercase block">Differential</span>
+              <span class="text-sky-300">${b.differential}</span>
+            </div>
+            <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
+              <span class="text-[10px] text-slate-500 uppercase block">Handbrake</span>
+              <span class="text-purple-300">${b.handbrake}</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    // Drift Setup Calculator Logic
+    function runAlignmentCalc() {
+      const chassis = document.getElementById('calc-chassis').value;
+      const surface = document.getElementById('calc-surface').value;
+
+      let fCamber = "-4.5°";
+      let rCamber = "-0.5°";
+      let caster = "+7.0°";
+      let tirePsi = "26 PSI";
+      let tip = "Standard competitive grassroots drift alignment.";
+
+      if (chassis === 'e46') {
+        fCamber = surface === 'dry-grip' ? "-5.2°" : surface === 'rain' ? "-3.8°" : "-4.5°";
+        rCamber = surface === 'dry-grip' ? "-0.8°" : surface === 'rain' ? "-0.2°" : "-0.5°";
+        caster = "+7.5°";
+        tirePsi = surface === 'dry-grip' ? "24 PSI" : surface === 'rain' ? "35 PSI" : "30 PSI";
+        tip = "Reinforce rear subframe mount points before tracking. SLR or Wisefab angle kits require 17x8.5 ET15 wheels to clear swaybars.";
+      } else if (chassis === 'schassis') {
+        fCamber = surface === 'dry-grip' ? "-4.8°" : "-4.0°";
+        rCamber = "-0.5°";
+        caster = "+6.8°";
+        tirePsi = surface === 'dry-grip' ? "26 PSI" : "32 PSI";
+        tip = "Move steering rack forward 25mm to eliminate over-centering on full lock. Keep rear toe at dead zero.";
+      } else if (chassis === 'miata') {
+        fCamber = "-3.8°";
+        rCamber = "-1.2°";
+        caster = "+5.5°";
+        tirePsi = surface === 'dry-grip' ? "28 PSI" : "36 PSI";
+        tip = "Miata double-wishbone rear gains camber under compression. Set rear camber to -1.0° static so under squat it hits 0° for maximum bite.";
+      } else if (chassis === 'gt86') {
+        fCamber = "-4.5°";
+        rCamber = "-0.7°";
+        caster = "+7.2°";
+        tirePsi = surface === 'dry-grip' ? "25 PSI" : "30 PSI";
+        tip = "Disconnect rear sway bar in wet conditions to dramatically increase forward traction when on throttle mid-corner.";
+      } else if (chassis === 'jzx') {
+        fCamber = "-5.5°";
+        rCamber = "-0.4°";
+        caster = "+8.0°";
+        tirePsi = surface === 'dry-grip' ? "22 PSI" : "28 PSI";
+        tip = "Heavy sedan chassis demands high front caster to assist quick counter-steer transitions. Run solid diff bushings.";
+      }
+
+      document.getElementById('out-fcamber').innerText = fCamber;
+      document.getElementById('out-rcamber').innerText = rCamber;
+      document.getElementById('out-caster').innerText = caster;
+      document.getElementById('out-tirepsi').innerText = tirePsi;
+      document.getElementById('out-tip').innerText = tip;
+    }
+
+    // Submit Build Form
+    async function submitBuildForm(e) {
+      e.preventDefault();
+      const payload = {
+        chassis: document.getElementById('form-chassis').value,
+        builder: document.getElementById('form-builder').value,
+        engine: document.getElementById('form-engine').value,
+        steering_angle: document.getElementById('form-angle').value,
+        differential: document.getElementById('form-diff').value,
+        handbrake: document.getElementById('form-hydro').value,
+        hp: "Custom HP"
+      };
+
+      try {
+        const res = await fetch('/api/submit-build', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          allBuilds.unshift(payload);
+          renderBuilds(allBuilds);
+          const msg = document.getElementById('form-msg');
+          msg.innerText = "✓ Build successfully posted to live Drum & Race grid!";
+          msg.classList.remove('hidden');
+          document.getElementById('build-form').reset();
+        }
+      } catch (err) {
+        allBuilds.unshift(payload);
+        renderBuilds(allBuilds);
+        const msg = document.getElementById('form-msg');
+        msg.innerText = "✓ Build saved to local session display!";
+        msg.classList.remove('hidden');
+      }
+    }
+
+    // Modal Helpers
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) { el.classList.remove('hidden'); el.classList.add('flex'); }
+    }
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) { el.classList.add('hidden'); el.classList.remove('flex'); }
+    }
+
+    // Initial Load
+    renderEvents(allEvents);
+    renderBuilds(allBuilds);
+    runAlignmentCalc();
+
+    // Async Fetch from Server API if available
+    async function fetchServerData() {
+      try {
+        const [resE, resB] = await Promise.all([
+          fetch('/api/events'),
+          fetch('/api/builds')
+        ]);
+        if (resE.ok) {
+          const dataE = await resE.json();
+          if (dataE.events && dataE.events.length) {
+            allEvents = dataE.events;
+            renderEvents(allEvents);
+          }
+        }
+        if (resB.ok) {
+          const dataB = await resB.json();
+          if (dataB.builds && dataB.builds.length) {
+            allBuilds = dataB.builds;
+            renderBuilds(allBuilds);
+          }
+        }
+      } catch (err) {
+        console.log('Using static cached data for events and builds.');
+      }
+    }
+    fetchServerData();
+  </script>
+</body>
+</html>

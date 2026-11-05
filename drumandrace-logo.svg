@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100" fill="none">
+  <defs>
+    <linearGradient id="nitro-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3b00" />
+      <stop offset="50%" stop-color="#ff7700" />
+      <stop offset="100%" stop-color="#ffb700" />
+    </linearGradient>
+    <linearGradient id="tire-smoke" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ff3b00" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Speed Streaks / Drift Marks -->
+  <path d="M 15 78 C 35 65, 55 45, 95 38" stroke="url(#tire-smoke)" stroke-width="4" stroke-linecap="round" />
+  <path d="M 28 85 C 48 74, 68 55, 105 48" stroke="url(#tire-smoke)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Drift Brake Rotor / Wheel Emblem -->
+  <g transform="translate(48, 50)">
+    <!-- Slotted Rotor -->
+    <circle r="36" fill="#12151e" stroke="#2a3042" stroke-width="3" />
+    <circle r="22" fill="#090b10" stroke="#ff5500" stroke-width="1.5" stroke-dasharray="8 4" />
+    <!-- Rotor Slots -->
+    <line x1="-18" y1="-18" x2="-8" y2="-8" stroke="#3b4256" stroke-width="2" stroke-linecap="round" />
+    <line x1="18" y1="18" x2="8" y2="8" stroke="#3b4256" stroke-width="2" stroke-linecap="round" />
+    <line x1="-18" y1="18" x2="-8" y2="8" stroke="#3b4256" stroke-width="2" stroke-linecap="round" />
+    <line x1="18" y1="-18" x2="8" y2="-8" stroke="#3b4256" stroke-width="2" stroke-linecap="round" />
+    <!-- Caliper -->
+    <path d="M 24 -24 C 36 -12, 36 12, 24 24 L 18 18 C 26 8, 26 -8, 18 -18 Z" fill="url(#nitro-grad)" filter="url(#glow)" />
+    <!-- Center Hub -->
+    <circle r="8" fill="#ff7700" />
+    <circle r="3" fill="#ffffff" />
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="110" y="52" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="900" font-size="34" letter-spacing="-0.5" fill="#ffffff" font-style="italic">
+    DRUM<tspan fill="url(#nitro-grad)">&amp;</tspan>RACE
+  </text>
+  <text x="112" y="74" font-family="'Fira Code', monospace" font-weight="700" font-size="10.5" letter-spacing="3" fill="#ff7700">
+    WORLDWIDE DRIFT &amp; HOMEBREW MOTORSPORTS
+  </text>
+</svg>
