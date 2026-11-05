@@ -46,6 +46,12 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
 
+  <!-- Security Hardening & CSP (Optimized for AdSense & Performance) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://googleads.g.doubleclick.net https://*.google.com https://*.googlesyndication.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://pagead2.googlesyndication.com https://*.google.com; child-src 'self' blob: https:;">
+
   <!-- Google AdSense with Page-Level Auto-Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1596056523034714"
      crossorigin="anonymous"></script>
@@ -744,6 +750,17 @@
       }
     }
 
+    // XSS Mitigation Sanitizer
+    function escapeHTML(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     function renderBuilds(builds) {
       const container = document.getElementById('builds-container');
       container.innerHTML = '';
@@ -753,29 +770,29 @@
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold uppercase">${b.badge}</span>
-              <span class="text-sm font-black text-race-orange font-mono">${b.hp}</span>
+              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-bold uppercase">${escapeHTML(b.badge || 'PRO-AM SPEC')}</span>
+              <span class="text-sm font-black text-race-orange font-mono">${escapeHTML(b.hp)}</span>
             </div>
-            <h3 class="text-xl font-black text-white italic uppercase">${b.chassis}</h3>
-            <p class="text-xs text-slate-400 mt-1 font-mono">Built by: <span class="text-slate-300 font-bold">${b.builder}</span></p>
+            <h3 class="text-xl font-black text-white italic uppercase">${escapeHTML(b.chassis)}</h3>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Built by: <span class="text-slate-300 font-bold">${escapeHTML(b.builder)}</span></p>
           </div>
 
           <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
             <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
               <span class="text-[10px] text-slate-500 uppercase block">Engine &amp; Boost</span>
-              <span class="text-slate-200">${b.engine}</span>
+              <span class="text-slate-200">${escapeHTML(b.engine)}</span>
             </div>
             <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
               <span class="text-[10px] text-slate-500 uppercase block">Steering Angle</span>
-              <span class="text-amber-400 font-bold">${b.steering_angle}</span>
+              <span class="text-amber-400 font-bold">${escapeHTML(b.steering_angle)}</span>
             </div>
             <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
               <span class="text-[10px] text-slate-500 uppercase block">Differential</span>
-              <span class="text-sky-300">${b.differential}</span>
+              <span class="text-sky-300">${escapeHTML(b.differential)}</span>
             </div>
             <div class="bg-black/50 p-2.5 rounded-xl border border-slate-800/80">
               <span class="text-[10px] text-slate-500 uppercase block">Handbrake</span>
-              <span class="text-purple-300">${b.handbrake}</span>
+              <span class="text-purple-300">${escapeHTML(b.handbrake)}</span>
             </div>
           </div>
         `;
